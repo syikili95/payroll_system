@@ -1,7 +1,26 @@
 import React, { Component } from 'react';
 import { Link, Switch } from 'react-router-dom';
+import { AuthContext } from './Auth';
+import firebaseConfig from './Firebase';
 
 class Sidebar extends Component {
+
+    static  contextType = AuthContext;
+
+    constructor(props){
+        super(props);
+        this.state = {
+            currentUser : {}
+        }
+    }
+
+    componentDidMount(){
+        this.setState({
+            currentUser :  this.context.currentUser
+        });
+
+        debugger;
+    }
     render() {
         return (
             <>
@@ -14,8 +33,8 @@ class Sidebar extends Component {
                     <Link to="/insurance" >Insurance</Link>
                     <Link to="/payroll" >Payroll</Link>
                     <Link to="/claims" >Claims</Link>
-                    {/* <Link to="/logout" >Logout</Link> */}
-                    <button onClick={}>Sign Out</button>
+                    <Link to="/account" >My Account</Link>
+                    <Link onClick={()=> {firebaseConfig.auth().signOut()}}>Sign Out</Link>
                 </aside>
             </>
         );
