@@ -1,16 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import Sidebar from './components/Sidebar';
-import React, { Suspense, lazy } from 'react'
-import { Route, Switch, Link, BrowserRouter as Router } from 'react-router-dom'
-import Loader from './components/Loader';
+import React from 'react'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
 import NetworkDetector from './components/NetworkDetector'
-import Modal from './components/Modal';
 import SignIn from './views/SignIn';
 import SignUp from './views/SignUp';
 import { AuthProvider } from './components/Auth';
 import PrivateRoute from './components/PrivateRoute';
-import Dashboard from './views/Dashboard';
 import Home from './views/Home';
 
 function App() {

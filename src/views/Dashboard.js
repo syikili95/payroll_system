@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import DashboardLeaveCard from '../components/DashboardLeaveCard';
+import React, { Component , useCallback } from 'react';
 import DashboardHeader from '../components/DashboardHeader';
 import Select from 'react-select';
 import { Link } from 'react-router-dom';
@@ -7,7 +6,6 @@ import styled from 'styled-components';
 import Skeleton from '../components/LoadingSkeleton';
 import TableSkeleton from '../components/TableSkeleton';
 import axios from 'axios';
-import Loader from '../components/Loader';
 
 const ContentCardTitle = styled.div`
     width: 300px;
@@ -346,6 +344,16 @@ class Dashboard extends Component {
         </div>
     }
 
+    onErrorLoadImage = (event) => {
+
+        try{
+            this.setState({ requestError: true }) 
+        }
+        catch(error) {
+            console.log(error);
+        }
+    }
+
     render() {
         return (
             <>
@@ -469,7 +477,7 @@ class Dashboard extends Component {
                                                                             src={`https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/${index + 1}.png?raw=true`}
                                                                             alt={item.name}
                                                                             onLoad={() => { this.setState({ imageLoading: false }) }}
-                                                                            onError={() => { this.setState({ requestError: true }) }}
+                                                                            // onError={this.onErrorLoadImage()}
                                                                             style={(this.state.imageLoading ? { display: "none" } : { display: "block" })}
                                                                         >
                                                                         </img>

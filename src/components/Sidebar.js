@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AuthContext } from './Auth';
 import firebaseConfig from './Firebase';
 
@@ -19,7 +19,6 @@ class Sidebar extends Component {
             currentUser :  this.context.currentUser
         });
 
-        debugger;
     }
     render() {
         return (

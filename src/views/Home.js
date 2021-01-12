@@ -1,9 +1,8 @@
-import React, { Component, Suspense, lazy, useContext } from 'react';
-import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+import React, { Component, Suspense, lazy } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import { AuthContext } from '../components/Auth';
 import Loader from '../components/Loader';
 import Modal from '../components/Modal';
-import PrivateRoute from '../components/PrivateRoute';
 import Sidebar from '../components/Sidebar';
 const Dashboard = lazy(() => import('./Dashboard'));
 const Claims = lazy(() => import('./Claims'));

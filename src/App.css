@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+body.sign-in {
+  background-color: #e84895;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -305,7 +309,7 @@ table tr{
   text-align: center;
 }
 
-a{
+a.dashboard-card-footer-link{
   color:#e84895;
 }
 
@@ -482,3 +486,6 @@ color: #888888;
   margin-left:0;
 }
 
+.pl-3 {
+  padding-left:3rem;
+}
